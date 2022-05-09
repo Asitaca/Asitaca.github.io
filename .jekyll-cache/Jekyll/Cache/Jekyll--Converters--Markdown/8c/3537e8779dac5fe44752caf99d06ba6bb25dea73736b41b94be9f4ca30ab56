@@ -1,0 +1,150 @@
+I"5<h2 id="useeffect">useEffect</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React,
+ {useEffect} from 'react';
+
+function App() {
+  useEffect(() =&gt;{
+    console.log('effect')
+
+  })
+  console.log('rendering');
+  return (
+    &lt;div className='App'&gt;
+      &lt;h1&gt;Kossie Coder&lt;/h1&gt;
+    &lt;/div&gt;
+  );
+}
+export default App;
+</code></pre></div></div>
+
+<p><img src="/assets/images/img/2022_04_28/useeffect.png" /></p>
+
+<p>콘솔창에</p>
+
+<p>‘rendering’이 먼저 출력되고,</p>
+
+<p>‘effect’가 출력된다</p>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useEffect, useState} from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  useEffect(() =&gt; {
+    console.log(count)
+
+  })
+  const increment = () =&gt; {
+    setCount(count +1);
+  };
+  return (
+    &lt;div className='App'&gt;
+      &lt;h1&gt;Kossie Coder&lt;/h1&gt;
+      &lt;button onClick={increment}&gt;Click&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+export default App;
+</code></pre></div></div>
+
+<p><img src="/assets/images/img/2022_04_28/useeffect1.png" /></p>
+
+<p>0이 출력 되고, 클릭할때마다 1씩 증가한다.</p>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useEffect, useState} from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [kossie, setKossie] = useState(0);
+  useEffect(() =&gt; {
+    console.log(count)
+
+  })
+  const increment = () =&gt; {
+    setCount(count +1);
+  };
+  return (
+    &lt;div className='App'&gt;
+      &lt;h1&gt;Kossie Coder&lt;/h1&gt;
+      &lt;button onClick={increment}&gt;Click&lt;/button&gt;
+      &lt;button onClick ={() =&gt; setKossie(kossie +1)}&gt;Click1&lt;/button&gt;
+    &lt;/div&gt; 
+  );
+}
+export default App;
+</code></pre></div></div>
+
+<p>‘Click’ 누르면, 1씩 증가<br />
+‘Click1’ 누르면, 현재 값 반복.</p>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useEffect, useState} from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [kossie, setKossie] = useState(0);
+  useEffect(() =&gt; {
+    console.log(count)
+
+  }, [count])
+
+  const increment = () =&gt; {
+    setCount(count +1);
+  };
+  return (
+    &lt;div className='App'&gt;
+      &lt;h1&gt;Kossie Coder&lt;/h1&gt;
+      &lt;button onClick= {increment}&gt;Click&lt;/button&gt;
+      &lt;button onClick ={() =&gt; setKossie(kossie +1)}&gt;Click1&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+export default App;
+</code></pre></div></div>
+
+<p>‘Click’ 누르면, 1씩 증가<br />
+‘Click1’ 누르면, 변화없음.<br />
+‘useEffect’ 배열에 어떤 값을 넣으면 그 값이 변경될 때만 출력한다.</p>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useEffect, useState} from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [kossie, setKossie] = useState(0);
+
+  useEffect(() =&gt; {
+    console.log(count)
+  }, [count,kossie])
+
+
+  useEffect(() =&gt; {
+    console.log('first rendering')
+  }, []);
+
+  const increment = () =&gt; {
+    setCount(count +1);
+  };
+  return (
+    &lt;div className='App'&gt;
+      &lt;h1&gt;Kossie Coder&lt;/h1&gt;
+      &lt;button onClick= {increment}&gt;Click&lt;/button&gt;
+      &lt;button onClick ={() =&gt; setKossie(kossie +1)}&gt;Click1&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+export default App;
+</code></pre></div></div>
+
+<p>‘first rendering’ 처음에만 출력되고 나중에는 출력되지 않는다.</p>
+
+<p>배열부분을 빈공간으로 두었기 때문이다.</p>
+
+<p>출처 : [런코딩]https://runcoding.tistory.com/31</p>
+
+:ET

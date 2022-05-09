@@ -1,0 +1,106 @@
+I"�<h2 id="componenet">componenet</h2>
+<p>컴포넌트 사용 전</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useEffect,useState} from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const increment = () =&gt; {
+    setCount(count +1);
+  };
+  const increment1 = () =&gt; {
+    setCount1(count1 +1);
+  };
+  const increment2 = () =&gt; {
+    setCount2(count2 +1);
+  };
+
+
+
+  return (
+    &lt;div className='App'&gt;
+      &lt;h1&gt;Kossie Coder&lt;/h1&gt;
+      &lt;button onClick= {increment}&gt;Click {count}&lt;/button&gt;
+      &lt;button onClick= {increment1}&gt;Click1 {count1}&lt;/button&gt;
+      &lt;button onClick= {increment2}&gt;Click2 {count2}&lt;/button&gt;
+    &lt;/div&gt; 
+  );
+}
+export default App;
+</code></pre></div></div>
+
+<p><img src="/assets/images/img/2022_04_29/component.png" /></p>
+
+<p>Click,Click1,Click2 버튼이 각각 생기고</p>
+
+<p>버튼마다 따로 작용을 한다.</p>
+
+<p>한 번씩 클릭할 때마다, 오른쪽의 숫자가 1씩 증가한다.</p>
+
+<hr />
+
+<p>component를 사용해서 간단히 만들어보자.</p>
+
+<p>component폴더를 만들고  Counter.js란 파일을 만든다.</p>
+
+<p>아래와 같다</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useState} from 'react';
+
+const Counter = () =&gt; {
+    const [count, setCount] = useState(0);
+    
+    const increment = () =&gt; {
+      setCount(count + 1);
+    };
+
+    return (
+        &lt;button onClick= {increment}&gt;
+        Click {count}  
+        &lt;/button&gt;
+       
+    );    
+
+};
+
+export default Counter;
+</code></pre></div></div>
+
+<p>App.js 파일을 살펴보자<br />
+아래와 같다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useEffect,useState} from 'react';
+import Counter from './components/Counter';
+
+function App() {
+  
+  return (
+    &lt;div className='App'&gt;
+      &lt;h1&gt;Kossie Coder&lt;/h1&gt;
+      &lt;Counter /&gt;
+      &lt;Counter /&gt;
+      &lt;Counter /&gt;
+    &lt;/div&gt; 
+  );
+}
+export default App;
+</code></pre></div></div>
+
+<p>import Counter from ‘./components/Counter’; 로 파일을 불러온다<br />
+Counter.js란 파일을
+App.js파일에서</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Counter /&gt;
+</code></pre></div></div>
+<p>형식으로 불러오는걸 알 수 있다.<br />
+즉, 불러올 파일명과 이름을 같게!</p>
+
+<p><img src="/assets/images/img/2022_04_29/component1.png" /></p>
+
+<p>코드가 굉장히 간결해졌다.<br />
+현재 각각 버튼의 이름이 같은데,<br />
+다음 글에서 각각 버튼의 이름을 ‘props’를 이용해 바꾸어보자.</p>
+
+<p>출처 : [런코딩]https://runcoding.tistory.com/31</p>
+
+:ET

@@ -1,0 +1,118 @@
+I"
+<p>Flex 레이아웃을 만들기 위한 기본적인 HTML 구조
+부모 요소인 div.container를 Flex Container(플렉스 컨테이너)라고 부르고,
+자식 요소인 div.item들을 Flex Item(플렉스 아이템)이라고 부릅니다.
+“컨테이너가 Flex의 영향을 받는 전체 공간이고, 설정된 속성에 따라 각각의 아이템들이 어떤 형태로 배치되는 것”이라고 생각하시면 됩니다.</p>
+
+<h3 id="기본-구조">기본 구조</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="container"&gt;
+	&lt;div class="item"&gt;helloflex&lt;/div&gt;
+	&lt;div class="item"&gt;abc&lt;/div&gt;
+	&lt;div class="item"&gt;helloflex&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+<hr />
+<h3 id="displayflex">display:flex</h3>
+
+<p>Flex 컨테이너에 display: flex;를 적용하는게 시작</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.container {
+	display: flex;
+	/* display: inline-flex; */
+}
+</code></pre></div></div>
+
+<p>Flex 아이템들은 가로 방향으로 배치되고, 자신이 가진 내용물의 width 만큼만 차지하게 된다.  height는 컨테이너의 높이만큼 늘어난다.</p>
+
+<hr />
+
+<h3 id="배치-방향-설정flex-direction">배치 방향 설정(flex-direction)</h3>
+
+<p>아이템들이 배치되는 축의 방향을 결정하는 속성</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.container {
+	flex-direction: row;
+	/* flex-direction: column; */
+	/* flex-direction: row-reverse; */
+	/* flex-direction: column-reverse; */
+}
+</code></pre></div></div>
+
+<p>row : 가로(왼쪽에서 오른쪽))<br />
+column : 가로 역순(오른쪽에서 왼쪽))<br />
+row-reverse : 세로(위에서 아래))<br />
+column-reverse : 세로 역순(아래에서 위))</p>
+
+<hr />
+
+<h3 id="줄넘김-처리-설정flex-wrap">줄넘김 처리 설정(flex-wrap)</h3>
+
+<p>컨테이너가 더 이상 아이템들을 한 줄에 담을 여유 공간이 없을 때 아이템 줄바꿈을 어떻게 할지 결정하는 속성</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.container {
+	flex-wrap: nowrap;
+	/* flex-wrap: wrap; */
+	/* flex-wrap: wrap-reverse; */
+}
+</code></pre></div></div>
+
+<p>nowrap (기본값)) : 줄바꿈하지 않는다. 빠져 나온다.</p>
+
+<p>wrap : 줄바꿈한다.</p>
+
+<p>wrap-reverse : 줄바꿈하고 역순으로 정렬</p>
+
+<hr />
+
+<h3 id="flex-flow">flex-flow</h3>
+
+<p>flex-direction과 flex-wrap을 한꺼번에 지정한다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.container {
+	flex-flow: row wrap;
+	/* 아래의 두 줄을 줄여 쓴 것 */
+	/* flex-direction: row; */
+	/* flex-wrap: wrap; */
+}
+</code></pre></div></div>
+
+<hr />
+<h3 id="메인축-방향-정렬justify-content">메인축 방향 정렬(justify-content)</h3>
+
+<p>메인축 방향으로 아이템을들 정렬</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.container {
+	justify-content: flex-start;
+	/* justify-content: flex-end; */
+	/* justify-content: center; */
+	/* justify-content: space-between; */
+	/* justify-content: space-around; */
+	/* justify-content: space-evenly; */
+}
+</code></pre></div></div>
+
+<p>flex-end : 아이템을 끝점으로 정렬<br />
+center : 가운데 정렬<br />
+space-between : 아이템들의 사이에 균일한 간격을 만든다<br />
+space-around : 아이템들의 둘레에 균일한 간격을 만든다<br />
+space-evenly : 아이템드르이 양 사이와 양 끝에 균일한 간격을 만들어 준다</p>
+
+<hr />
+
+<h3 id="수직축-방향-정렬align-items">수직축 방향 정렬(align-items)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.container {
+	align-items: stretch;
+	/* align-items: flex-start; */
+	/* align-items: flex-end; */
+	/* align-items: center; */
+	/* align-items: baseline; */
+}
+</code></pre></div></div>
+
+<p>stretch : 아이템들이 수직축 방향으로 끝까지 늘어난다<br />
+row(가로 배치)일 때는 위, column(세로 배치)일 때는 왼쪽.<br />
+flex-end : 아이템들을 끝으로 정렬합니다. flex-direction이 row(가로 배치)일 때는 아래, column(세로 배치)일 때는 오른쪽.<br />
+center : 가운데 정렬 <br />
+baseline : 텍스트 베이스라인 기준으로 정</p>
+
+<p>출처 : https://studiomeal.com/archives/197</p>
+:ET

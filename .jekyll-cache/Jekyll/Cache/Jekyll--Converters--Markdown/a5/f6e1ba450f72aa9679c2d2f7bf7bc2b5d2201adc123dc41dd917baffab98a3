@@ -1,0 +1,76 @@
+I"�<h2 id="props">props</h2>
+
+<p>App.js</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useEffect,useState} from 'react';
+import Counter from './components/Counter';
+
+function App() {
+  const [buttonName, setButtonName] = useState('클릭');
+  const clickButton = () =&gt; {
+    setButtonName('변함');
+  };
+  
+  return (
+    &lt;div className='App'&gt;
+      &lt;h1&gt;Kossie Coder&lt;/h1&gt;
+      &lt;Counter click="click1"/&gt;
+      &lt;Counter click="click2"/&gt;
+      &lt;Counter click={buttonName}/&gt;
+      &lt;button onClick={clickButton}&gt;Click&lt;/button&gt;
+    &lt;/div&gt; 
+  );
+}
+export default App;
+
+</code></pre></div></div>
+
+<p>Counter.js</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useState} from 'react';
+
+const Counter = (props) =&gt; {
+    const [count, setCount] = useState(0);
+    
+    const increment = () =&gt; {
+      setCount(count + 1);
+    };
+    
+    const clickString = props.click ㅣㅣ 'Click';
+    return (
+        &lt;button onClick= {increment}&gt;
+        {clickString} {count}
+        &lt;/button&gt;
+        
+    );    
+
+};
+
+export default Counter;
+</code></pre></div></div>
+
+<p>App.js에서 click 이름을 click1, click2, {buttonName}으로 지정해줬다.</p>
+
+<p>그러면 Counter.js에서 props로  {clickString} {count}를 보내주고,</p>
+
+<p>App.js에서 이를 받아오고, {clickString}부분에</p>
+
+<p>const clickString = props.click ㅣㅣ ‘Click’; 값이 들어간다.</p>
+
+<p>props.click의 값이 있으면 props.click의 값을 넣고,</p>
+
+<p>없으면 ‘Click’ 을 넣으라는 뜻이다.</p>
+
+<p>props.click의 값은 App.js에 있는 각 click들의 변수값이다.</p>
+
+<p><img src="/assets/images/img/2022_05_02/props.png" /></p>
+
+<p>순서대로 click1 click2 {buttonName} 순으로 들어간다</p>
+
+<p>{buttonName} 값은 ‘클릭’으로 지정되 있고, 네 번째 버튼을 클릭하면,</p>
+
+<p>‘변함’으로 바뀐다.</p>
+
+<p><img src="/assets/images/img/2022_05_02/props1.png" /></p>
+
+<p>출처 : [런코딩]https://runcoding.tistory.com/31</p>
+
+:ET

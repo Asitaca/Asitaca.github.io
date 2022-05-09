@@ -1,0 +1,67 @@
+I"�<p>이벤트 기반인 XMLHttpRequest과는 달리 fetch API는 Promise 기반으로 구성되어 있어 비동기 처리 프로그래밍 방식에 잘 맞는 형태이다.
+비동기 처리 프로그래밍 방식에 잘 맞는 형태이다.
+fetch() 함수는 첫번째 인자로 URL, 두번째 인자로 옵션 객체를 받고, Promise 타입의 객체를 반환합니다. 반환된 객체는, API 호출이 성공했을 경우에는 응답(response) 객체를 resolve하고, 실패했을 경우에는 예외(error) 객체를 reject합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch(url, options)
+  .then((response) =&gt; console.log("response:", response))
+  .catch((error) =&gt; console.log("error:", error));
+</code></pre></div></div>
+
+<p>fetch() 함수는 디폴트로 GET 방식으로 작동하고 GET 방식은 요청 전문을 받지 않기 때문에 옵션 인자가 필요가 없습니다.
+fetch를 통해 ajax를 호출 시 해당 주소에 요청을 보낸 다음, 응답 객체(Promise object Response)를 받는다.
+그러면 첫 번째 then에서 그 응답을 받게되고, res.text() 메서드로 파싱한 text값을 리턴한다.
+그러면 그 다음 then에서 리턴받은 text 값을 받고, 원하는 처리를 할 수 있게 된다</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch('api주소')
+  .then( res =&gt; res.json())
+  .then( res =&gt; {
+    // data를 응답받은 후의 로직
+  );
+</code></pre></div></div>
+
+<p>함수 선언식으로 바꾸게 되면 아래와 같다</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch('api주소')
+  .then(function(res) {
+    return res.json();
+  })
+  .then(function(res) {
+    // data를 응답받은 후의 로직
+  });
+</code></pre></div></div>
+
+<hr />
+
+<p>예를 들어 보자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then((response) =&gt; response.json())
+  .then((data) =&gt; console.log(data));
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(function(res) {
+    return res.json();
+  })
+  .then(function(data) {
+    console.log(data)
+  });
+</code></pre></div></div>
+
+<p>아래와 같다</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{userId: 1, id: 1, title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit', body: 'quia et suscipit\nsuscipit recusandae consequuntur …strum rerum est autem sunt rem eveniet architecto'}
+</code></pre></div></div>
+
+<h3 id="fetch-api---get-method">fetch API - GET Method</h3>
+
+<p>GET: 존재하는 자원을 요청</p>
+
+<p>→ 단순히 원격 API에 있는 데이터를 가져올 때 쓰임</p>
+
+<p>→ fetch함수는 디폴트로 GET 방식으로 작동하고, 옵션 인자가 필요 없음.</p>
+
+<p>→ 응답(response) 객체는 json() 메서드를 제공하고, 이 메서드를 호출하면 응답(response) 객체로부터 JSON 형태의 데이터를 자바스크립트 객체로 변환하여 얻을 수 있음.</p>
+
+<p>출처 : https://www.daleseo.com/js-window-fetch/ , https://dream-frontend.tistory.com/383</p>
+:ET

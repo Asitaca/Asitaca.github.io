@@ -1,0 +1,5 @@
+I"_<h2 id="useeffect">useEffect</h2>
+<p>~~~
+import React,
+ {useEffect} from ‘react’;</p>
+:ET

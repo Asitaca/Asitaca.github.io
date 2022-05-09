@@ -1,0 +1,73 @@
+I"#<p>Echarts의 옵션에 대해 알아보자.</p>
+
+<h2 id="legend">legend</h2>
+
+<h4 id="표시-유무">표시 유무</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>show: true
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="위치">위치</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>legend: {
+    left: "14%"
+    /* right: "auto" */
+    /* left: "" */
+    /* top: "" */
+    /* bottom: "" */
+  }
+</code></pre></div></div>
+
+<p>left, top : ‘auto’ or ‘??%’ or ‘left’ or ‘center’ or ‘right’<br />
+ right, bottom : ‘auto’ or ‘??%’</p>
+
+<hr />
+
+<h4 id="범위">범위</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>legend: {
+    width: "0%"
+    /* height: "auto" */
+  }
+</code></pre></div></div>
+
+<p>넓이 및 높낮이</p>
+
+<hr />
+
+<h4 id="정렬">정렬</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+legend: {
+    orient: "horizontal"
+    /* orient: "vertical" */
+  }
+</code></pre></div></div>
+
+<p>horizontal : 가로로정렬<br />
+vertical : 세로로정렬</p>
+
+<hr />
+
+<h4 id="아이템-위치">아이템 위치</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>legend: {
+    align: "right"
+    /* align: "left" */
+    /* align: "auto" */
+  }
+</code></pre></div></div>
+
+<p>오브젝트 순서 변경</p>
+
+<hr />
+
+<h4 id="아이템-갭-넓이-높낮이">아이템 갭, 넓이, 높낮이</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  legend: {
+    itemGap: 10
+    /* itemwWidth: ? */
+    /* itemwHeight: ? */
+  }
+</code></pre></div></div>
+:ET

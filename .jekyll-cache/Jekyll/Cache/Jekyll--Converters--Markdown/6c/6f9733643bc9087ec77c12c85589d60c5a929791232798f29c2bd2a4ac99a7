@@ -1,0 +1,181 @@
+I"�<p>‘kossie’ 란 글자를 ‘update’를 누르면<br />
+‘coder’ 로 바뀌는 실습을 해보자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function App() {
+
+  const onSubmit = () =&gt; {
+    alert('submitted'); 
+
+  };
+
+  const onKeyUp = (event) =&gt; {
+    if (event.keyCode === 13) {
+    onSubmit();
+    };
+  }
+
+  let text = 'Kossie';
+
+  const updateText = () =&gt; {
+    text = 'Coder';
+    console.log(text);
+
+  }
+ 
+  return (
+    &lt;div className="App"&gt;
+      &lt;input onKeyUp={onKeyUp}/&gt;
+      &lt;button onClick={onSubmit}&gt;Submit
+      &lt;/button&gt;
+  
+
+    &lt;br /&gt;&lt;br /&gt;
+
+    &lt;span&gt;{text}&lt;/span&gt;
+    &lt;button onClick={updateText}&gt;Update&lt;/button&gt; 
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div></div>
+
+<p>‘kossie’란 글자가 있고, ‘update’ 버튼을 누르면,</p>
+
+<p>웹상에 변화가 없다.</p>
+
+<p>콘솔창에서는 ‘coder’가 출력된다.</p>
+
+<p><img src="/assets/images/img/2022_04_28/kossie.png" /></p>
+
+<hr />
+
+<p><img src="/assets/images/img/2022_04_28/kossie.png" /></p>
+
+<h2 id="usestate">usestate</h2>
+
+<p>usestate를 사용해보자</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function App() {
+
+  const [text, setText] = useState('Kossie');
+
+  const onSubmit = () =&gt; {
+    alert('submitted');
+
+  };
+
+  const onKeyUp = (event) =&gt; {
+    if (event.keyCode === 13) {
+    onSubmit();
+    };
+  }
+
+  //let text = 'Kossie';
+
+  const updateText = () =&gt; {
+    //text = 'Coder';
+    setText('Coder')
+    console.log(text);
+
+  }
+  console.log(text);
+
+  return (
+    &lt;div className="App"&gt;
+      &lt;input onKeyUp={onKeyUp}/&gt;
+      &lt;button onClick={onSubmit}&gt;Submit
+      &lt;/button&gt;
+  
+
+    &lt;br /&gt;&lt;br /&gt;
+
+    &lt;span&gt;{text}&lt;/span&gt;
+    &lt;button onClick={updateText}&gt;Update&lt;/button&gt; 
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div></div>
+
+<p>‘kossie’란 글자가 있고, ‘update’ 버튼을 누르면,</p>
+
+<p>‘coder’로 변한다.</p>
+
+<p><img src="/assets/images/img/2022_04_28/kossie.png" /></p>
+
+<hr />
+
+<p><img src="/assets/images/img/2022_04_28/coder.png" /></p>
+
+<p>로그인 창을 만들고 입력하는 부분을 만들어보자</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useState} from 'react';
+
+function App(){
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const onSubmit = () =&gt; {
+    alert('submitted');
+  };
+
+  return (
+    &lt;div className = "App"&gt;
+      &lt;input placeholder='Username' value={username} /&gt;&lt;br /&gt;
+      &lt;input placeholder='Password' value={password} /&gt;&lt;br /&gt;
+      &lt;button onClick={onSubmit}&gt;Login&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div></div>
+
+<p><img src="/assets/images/img/2022_04_28/login.png" /></p>
+
+<p>Username, Password 입력되지 않는다.</p>
+
+<p>onChage를 활용해보자.</p>
+
+<p>onChange는 인풋이 바뀔때마다 이벤트를 발생시킨다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, {useState} from 'react';
+function App() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const onSubmit = (event) =&gt; {
+    event.preventDefault();
+    console.log(username, password);
+
+  };
+ 
+  return (
+    &lt;div className="App"&gt;
+      &lt;form onSubmit={onSubmit}&gt;
+      &lt;input 
+      placeholder="Username" 
+      value={username} 
+      onChange={(e) =&gt; setUsername(e.target.value)}/&gt;&lt;br /&gt;
+      &lt;input 
+      placeholder="Password" 
+      value={password} 
+      onChange={(e) =&gt; setPassword(e.target.value)}/&gt;&lt;br /&gt;
+
+      &lt;button type = "submit"&gt;Login
+      &lt;/button&gt;
+      &lt;/form&gt;
+      &lt;/div&gt;
+  ); 
+}
+
+export default App;
+</code></pre></div></div>
+
+<p>Username, Password 입력이 되고</p>
+
+<p>콘솔창에 로그인 정보가 뜬다</p>
+
+<p>출처 : [런코딩]https://runcoding.tistory.com/31</p>
+
+:ET

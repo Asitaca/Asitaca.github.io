@@ -1,0 +1,137 @@
+I"�<h2 id="이벤트-핸들링onclick--onkeyup">이벤트 핸들링(onClick $ onKeyUp)</h2>
+
+<h3 id="1-onclick--클릭을-하면-발생하는-이벤트이다">1. onClick : 클릭을 하면 발생하는 이벤트이다.</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function App() {
+  return (
+    &lt;div className="App"&gt;
+      
+      &lt;button onClick={() =&gt; alert('hello')}&gt;Submit&lt;/button&gt;
+
+
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div></div>
+
+<p>‘Submit’란 버튼을 만들고 클릭을 하면,</p>
+
+<p>‘hello’ 란 창이 뜬다.</p>
+
+<p><img src="/assets/images/img/2022_04_26/submit.png" /></p>
+
+<hr />
+
+<p><img src="/assets/images/img/2022_04_26/hello.png" /></p>
+
+<p>다음은 ‘onSubmit’란 변수를 만들어 대입하는 형식으로 바꿔본다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function App() {
+
+  const onSubmit = () =&gt; {
+    alert('submitted');
+
+  }
+  return (
+    &lt;div className="App"&gt;
+      
+      &lt;button onClick={onSubmit}&gt;Submit&lt;/button&gt;
+
+
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div></div>
+
+<p>‘Submit’란 버튼을 만들고 클릭을 하면,</p>
+
+<p>‘submitted’ 란 창이 뜬다.</p>
+
+<p><img src="/assets/images/img/2022_04_26/submit.png" /></p>
+
+<hr />
+
+<p><img src="/assets/images/img/2022_04_26/submitted.png" /></p>
+
+<h3 id="2-onkeyup--키를-눌렀다가-키가-올라올-때-발생하는-이벤트이다">2. onKeyUp : 키를 눌렀다가, 키가 올라올 때 발생하는 이벤트이다.</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function App() {
+
+  const onSubmit = () =&gt; {
+    alert('submitted');
+
+  };
+
+  const onKeyUp = () =&gt; {
+    console.log('key up');
+  }
+
+  return (
+    &lt;div className="App"&gt;
+      &lt;input onKeyup={onKeyUp}/&gt;
+      &lt;button onClick={onSubmit}&gt;Submit&lt;/button&gt;
+
+
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div></div>
+
+<p>‘Submit’를 눌렀다 떼면,</p>
+
+<p>‘submitted’ 란 창이 뜬다.</p>
+
+<p><img src="/assets/images/img/2022_04_26/submit입력.png" /></p>
+
+<hr />
+
+<p><img src="/assets/images/img/2022_04_26/submitted.png" /></p>
+
+<p>다음은 특정키를 눌렀다가 떼었을 때 이벤트가 발생하게끔 바꿔본다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function App() {
+
+  const onSubmit = () =&gt; {
+    alert('submitted');
+
+  };
+
+  const onKeyUp = (event) =&gt; {
+    if (event.keyCode === 13) {
+    onSubmit();
+    };
+  }
+
+  return (
+    &lt;div className="App"&gt;
+      &lt;input onKeyUp={onKeyUp}/&gt;
+      &lt;button onClick={onSubmit}&gt;Submit
+      &lt;/button&gt;
+
+
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div></div>
+
+<p>‘엔터’ 키의 키코드는 ‘13’이다.</p>
+
+<p>‘엔터키’를 눌렀다가 뗐을 때 발생한다.</p>
+
+<p>다른 키를 누르면 반응하지 않는다.</p>
+
+<p><img src="/assets/images/img/2022_04_26/submit입력.png" /></p>
+
+<hr />
+
+<p><img src="/assets/images/img/2022_04_26/submitted.png" /></p>
+
+:ET
