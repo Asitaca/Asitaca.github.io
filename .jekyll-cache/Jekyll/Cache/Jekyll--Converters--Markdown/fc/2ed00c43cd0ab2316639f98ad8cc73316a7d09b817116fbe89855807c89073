@@ -1,7 +1,9 @@
-I"�<p>‘kossie’ 란 글자를 ‘update’를 누르면<br />
+I"�<p>‘kossie’ 란 글자를 ‘update’를 누르면<br />
 ‘coder’ 로 바뀌는 실습을 해보자.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function App() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import './App.css';
+
+function App() {
 
   const onSubmit = () =&gt; {
     alert('submitted'); 

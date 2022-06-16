@@ -1,0 +1,110 @@
+I"�<h3 id="practicehtml">practice.html</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+        
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span> <span class="na">id=</span><span class="s">"oc"</span><span class="nt">&gt;</span>열고닫기창<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"열고닫기('block')"</span><span class="nt">&gt;</span> 열기 <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"열고닫기('none')"</span><span class="nt">&gt;</span> 닫기 <span class="nt">&lt;/button&gt;</span>
+
+      <span class="nt">&lt;script&gt;</span>
+      <span class="kd">function</span> <span class="nx">열고닫기</span><span class="p">(</span><span class="nx">a</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oc</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nt">&lt;/script&gt;</span>
+  
+      <span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>이벤트 리스너를 사용하여 지난 시간에 했던 본문 부분을 더 간단하게 보여줄 수 있다</p>
+
+<p>다음을 확인해보자</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+        
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span> <span class="na">id=</span><span class="s">"oc"</span><span class="nt">&gt;</span>열고닫기창<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"open"</span><span class="nt">&gt;</span> 열기 <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"close"</span><span class="nt">&gt;</span> 닫기 <span class="nt">&lt;/button&gt;</span>
+
+      <span class="nt">&lt;script&gt;</span>
+     
+     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">close</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+       <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oc</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span>
+     <span class="p">});</span>
+     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+       <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oc</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">block</span><span class="dl">'</span>
+     <span class="p">});</span>
+      
+      <span class="nt">&lt;/script&gt;</span>
+  
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>스크립트 부분이 조금 더 길어지긴 했지만, 본문이 짧아져 보기 쉽다.</p>
+
+<hr />
+
+<h3 id="이벤트의-종류">이벤트의 종류</h3>
+
+<ul>
+  <li>마우스 이벤트
+    <ul>
+      <li>click : 요소에 마우스를 클릭했을 때</li>
+      <li>dbclick : 요소에 마우스를 더블클릭했을 때</li>
+      <li>mouseover : 요소 위로 마우스를 움직였을 때</li>
+      <li>mouseout : 요소 바깥으로 마우스를 움직였을 때</li>
+      <li>mousedown : 마우스를 누르고 있을 때</li>
+      <li>mouseup : 눌렀던 마우스 버튼을 땔 때</li>
+      <li>mousemove : 마우스를 움직였을 때</li>
+      <li>contextmenu : 마우스 오른쪽 버튼 눌렀을 때 나오는 메뉴가 나오기 전에 이벤트 발생</li>
+    </ul>
+  </li>
+  <li>키보드 이벤트
+    <ul>
+      <li>keydown : 키를 처음 눌렀을 때</li>
+      <li>keyup : 키를 떼었을 때</li>
+      <li>keypress : 키를 누른 상태에서</li>
+    </ul>
+  </li>
+  <li>UI 이벤트
+    <ul>
+      <li>load : 웹 페이지의 로드가 완료되었을 때</li>
+      <li>unload : 웹 페이지가 언로드될 때</li>
+      <li>error : 브라우저가 자바스크립트 오류를 만났거나, 요청한 자원이 없는 경우</li>
+      <li>resize : 브라우저 창 크기를 조정했을 때</li>
+      <li>scroll : 사용자가 페이지를 위아래로 스크롤할 때</li>
+      <li>abort : 이미지의 로딩이 중단되었을 때</li>
+    </ul>
+  </li>
+  <li>폼 이벤트
+    <ul>
+      <li>input : 인풋 요소 값이 변경되었을 때</li>
+      <li>change : 선택 상자, 체크박스, 라디어 버튼의 상태가 변경되었을 때</li>
+      <li>submit : 사용자가 버튼키를 이용해 폼을 제출할 때</li>
+      <li>reset : 리셋 버튼을 이용할 때</li>
+      <li>cut : 폼 필드의 컨텐츠를 잘라냈을 때</li>
+      <li>copy : 폼 필드의 컨텐츠를 복사했을 때</li>
+      <li>paste : 폼 필드의 컨텐츠를 붙여넣을 때</li>
+      <li>select : 텍스트를 선택했을 때</li>
+    </ul>
+  </li>
+  <li>포커스 이벤트
+    <ul>
+      <li>focus : 요소가 포커스를 얻었을 때 focusin</li>
+      <li>blur : 포커스를 잃었을 때 focusout</li>
+    </ul>
+  </li>
+  <li>드래그 앤 드롭 이벤트
+    <ul>
+      <li>dragstart</li>
+      <li>drag</li>
+      <li>dragleave</li>
+      <li>drop</li>
+    </ul>
+  </li>
+</ul>
+
+<p>on + ‘이벤트명’ 으로 붙이는 방식도 있지만,
+addEventListener로 붙이는 방식이 여러 이벤트도 등록할 수 있고, 특정 이벤트도 제거 가능하는등 장점이 더 많다<br />
+<strong>function()</strong>부분을 콜백(Callback)함수라 하는데, 파라미터로 함수를 전달한다. 그리고 전달받은 그 함수를 함수의 내부에서 실행시킨다.<br />
+즉, 이벤트가 실행됬을 때, 사용자에게 다시 알려주는 기능을 한다.</p>
+:ET

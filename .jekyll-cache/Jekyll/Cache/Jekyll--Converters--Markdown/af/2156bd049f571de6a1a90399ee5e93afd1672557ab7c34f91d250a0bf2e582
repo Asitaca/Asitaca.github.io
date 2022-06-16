@@ -1,0 +1,147 @@
+I"<h2 id="usestate">useState</h2>
+
+<h4 id="usestate-변수를-각각-사용했을-때">useState 변수를 각각 사용했을 때</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import './App.css';
+import {useState} from 'react';
+
+function App() {
+
+  const [날씨1,a] = useState('흐림');
+  const [날씨2,b] = useState('맑음');
+  const [날씨3,c] = useState('비옴');
+
+  const [number,setNumber]= useState(0);
+
+  const click = () =&gt; {
+    let copy = [...날씨1];
+    copy = '맑음';
+    a(copy);
+
+  }
+
+  return(
+    &lt;div className="App"&gt;
+      &lt;div className="black-nav"&gt;
+        &lt;h4&gt;뒤죽박죽 서랍장&lt;/h4&gt;
+      &lt;/div&gt; 
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월10일 &lt;span onClick={()=&gt;setNumber(number+1)}&gt;👍 &lt;/span&gt;{number}&lt;/h4&gt; 
+        &lt;p&gt;{날씨1} &lt;button onClick={click}&gt;날씨바꿔&lt;/button&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월11일&lt;/h4&gt;
+        &lt;p&gt;{날씨2}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월12일&lt;/h4&gt;
+        &lt;p&gt;{날씨3}&lt;/p&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  );
+
+}
+export default App;
+</code></pre></div></div>
+
+<h4 id="usestate-변수를-arrary를-사용했을-때">useState 변수를 arrary를 사용했을 때</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import './App.css';
+import {useState} from 'react';
+
+function App() {
+
+  const [날씨,a] = useState(['흐림','맑음','비옴']);
+  
+
+  const [number,setNumber]= useState(0);
+
+  const click = () =&gt; {
+    let copy = [...날씨];
+    copy[0] = '맑음';
+    a(copy);
+
+  }
+
+  return(
+    &lt;div className="App"&gt;
+      &lt;div className="black-nav"&gt;
+        &lt;h4&gt;뒤죽박죽 서랍장&lt;/h4&gt;
+      &lt;/div&gt; 
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월10일 &lt;span onClick={()=&gt;setNumber(number+1)}&gt;👍 &lt;/span&gt;{number}&lt;/h4&gt; 
+        &lt;p&gt;{ 날씨[0] } &lt;button onClick={click}&gt;날씨바꿔&lt;/button&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월11일&lt;/h4&gt;
+        &lt;p&gt;{ 날씨[1] }&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월12일&lt;/h4&gt;
+        &lt;p&gt;{ 날씨[2]} &lt;/p&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  );
+
+}
+export default App;
+</code></pre></div></div>
+
+<h4 id="따봉버튼을-누르면-오른쪽-숫자가-1씩-계속-증가하고-가나다순정렬버튼을-누르면-가나다라순으로-제목이-바뀐다">따봉버튼을 누르면 오른쪽 숫자가 1씩 계속 증가하고, 가나다순정렬버튼을 누르면 가나다라순으로 제목이 바뀐다</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import './App.css';
+import {useState} from 'react';
+
+function App() {
+
+  const [이름,a] = useState(['철수','수미','영수','민수']);
+  
+
+  const [number,setNumber]= useState(0);
+
+  const click = () =&gt; {
+    let copy = [...이름];
+    copy = copy.sort();
+    a(copy);
+
+  }
+
+  return(
+    &lt;div className="App"&gt;
+      &lt;div className="black-nav"&gt;
+        &lt;h4&gt;뒤죽박죽 서랍장&lt;/h4&gt;
+      &lt;/div&gt; 
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월10일 &lt;span onClick={()=&gt;setNumber(number+1)}&gt;👍 &lt;/span&gt;{number}&lt;/h4&gt; 
+        &lt;p&gt;{ 이름[0] } &lt;button onClick={click}&gt;가나다순정렬&lt;/button&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월11일&lt;/h4&gt;
+        &lt;p&gt;{ 이름[1] }&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월12일&lt;/h4&gt;
+        &lt;p&gt;{ 이름[2]} &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="list"&gt;
+        &lt;h4&gt;5월13일&lt;/h4&gt;
+        &lt;p&gt;{ 이름[3]} &lt;/p&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  );
+
+}
+export default App;
+</code></pre></div></div>
+
+<p><img src="/assets/images/img/2022_05_11/sort1.png" /></p>
+
+<p>이렇게</p>
+
+<p><img src="/assets/images/img/2022_05_11/sort2.png" /></p>
+
+<p>출처:[코딩애플]https://youtu.be/jAFogNao6CA</p>
+
+:ET

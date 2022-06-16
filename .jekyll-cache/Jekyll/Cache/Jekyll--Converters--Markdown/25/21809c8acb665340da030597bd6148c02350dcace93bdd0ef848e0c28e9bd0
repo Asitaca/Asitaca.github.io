@@ -1,0 +1,29 @@
+I"�<table>
+  <tbody>
+    <tr>
+      <td>getElementById</td>
+      <td>ID</td>
+    </tr>
+    <tr>
+      <td>getElementsByClassName</td>
+      <td>class</td>
+    </tr>
+    <tr>
+      <td>getElementsByTagName</td>
+      <td>Tag</td>
+    </tr>
+    <tr>
+      <td>getElementsByName</td>
+      <td>name</td>
+    </tr>
+    <tr>
+      <td>querySelector</td>
+      <td>선택자</td>
+    </tr>
+    <tr>
+      <td>querySelectorAll</td>
+      <td>선택자</td>
+    </tr>
+  </tbody>
+</table>
+:ET

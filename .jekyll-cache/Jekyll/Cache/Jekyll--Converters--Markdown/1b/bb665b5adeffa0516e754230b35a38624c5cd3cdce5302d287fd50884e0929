@@ -1,0 +1,162 @@
+I"�*<h2 id="display-visibility">display, visibility</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>1번<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"visibility:hidden"</span><span class="nt">&gt;</span>2번<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>3번<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span><span class="p">{</span><span class="nl">width</span><span class="p">:</span><span class="m">100px</span><span class="p">;</span><span class="nl">height</span><span class="p">:</span><span class="m">100px</span><span class="p">;</span><span class="nl">background-color</span><span class="p">:</span> <span class="no">blueviolet</span><span class="p">;}</span>
+</code></pre></div></div>
+
+<p>이 html은 아래에 세번째 그림과 같다</p>
+
+<div style="float:left;">
+<img src="/assets/images/img/2022_06_15/block.png" />
+</div>
+<div style="float:left;">
+<img src="/assets/images/img/2022_06_15/none.png" />
+</div>
+<div style="float:left;">
+<img src="/assets/images/img/2022_06_15/visible.png" />
+</div>
+<p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br />
+그림 순서대로</p>
+
+<p>display: block, visibility: visible<br />
+display: none<br />
+visibility: hidden</p>
+
+<p>이다.</p>
+
+<p>display: block; 할 경우 창이 보이고<br />
+display: none; 할 경우 창이 보이지 않는다.(공간을 차지하지 않는다.)</p>
+
+<p>visibility: visible; 할 경우 창이 보이고<br />
+visibility: hidden; 할 경우 창이 보이지 않는다.(공간을차지한다.)</p>
+
+<hr />
+
+<h3 id="순서">순서</h3>
+
+<ol>
+  <li>일단 HTML/CSS로 디자인을 짠다</li>
+  <li>그 디자인을 열고 닫았다 하는 기능을 구현한다</li>
+</ol>
+
+<h4 id="practicehtml">practice.html</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+  <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;title&gt;</span>창 열고 닫기 만들기<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"design.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- design.css 불러오기 --&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+           
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span> <span class="na">id=</span><span class="s">"oc"</span><span class="nt">&gt;</span>열고닫기창<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"document.getElementById('oc').style.display = 'block';"</span><span class="nt">&gt;</span> 열기 <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"document.getElementById('oc').style.display = 'none';"</span><span class="nt">&gt;</span> 닫기 <span class="nt">&lt;/button&gt;</span>
+         
+      <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="designcss">design.css</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="p">}</span> 
+</code></pre></div></div>
+
+<p>아래와 같은 그림이 나온다.</p>
+
+<p><img src="/assets/images/img/2022_06_15/openclose.png" /></p>
+
+<p>‘닫기’ 버튼을 누르면 검은화면부분이 닫히고,</p>
+
+<p>‘열기’ 버튼을 누르면 검은화면부분이 다시 보인다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+        
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span> <span class="na">id=</span><span class="s">"oc"</span><span class="nt">&gt;</span>열고닫기창<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"열기()"</span><span class="nt">&gt;</span> 열기 <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"닫기()"</span><span class="nt">&gt;</span> 닫기 <span class="nt">&lt;/button&gt;</span>
+
+      <span class="nt">&lt;script&gt;</span>
+      <span class="kd">function</span> <span class="nx">열기</span><span class="p">(){</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oc</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">block</span><span class="dl">'</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="kd">function</span> <span class="nx">닫기</span><span class="p">(){</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oc</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">;</span>  
+      <span class="p">}</span>
+      <span class="nt">&lt;/script&gt;</span>
+  
+      <span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>function() 을 활용해 본문을 요약할 수 있다</p>
+
+<p>function() 안에 들어갈 파라미터는 여러개 사용할 수 있다</p>
+
+<p>더 간략하게 줄일 수 있다</p>
+
+<p>다음과 같다</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+        
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span> <span class="na">id=</span><span class="s">"oc"</span><span class="nt">&gt;</span>열고닫기창<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"열고닫기('block')"</span><span class="nt">&gt;</span> 열기 <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"열고닫기('none')"</span><span class="nt">&gt;</span> 닫기 <span class="nt">&lt;/button&gt;</span>
+
+      <span class="nt">&lt;script&gt;</span>
+      <span class="kd">function</span> <span class="nx">열고닫기</span><span class="p">(</span><span class="nx">a</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oc</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nt">&lt;/script&gt;</span>
+  
+      <span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="classlist">classList</h2>
+
+<p>클래스 추가 삭제를 통하여 다른 방법으로 구현 가능하다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+        
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span> <span class="na">id=</span><span class="s">"oc"</span><span class="nt">&gt;</span>열고닫기창<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"openclose"</span><span class="nt">&gt;</span> 열고닫기 <span class="nt">&lt;/button&gt;</span>
+      
+      <span class="nt">&lt;script&gt;</span>
+
+     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">openclose</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+       <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oc</span><span class="dl">'</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">show</span><span class="dl">'</span><span class="p">)</span>
+     <span class="p">});</span>
+     
+      <span class="nt">&lt;/script&gt;</span>
+  
+      <span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.show</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>본문 id=”oc” 부분에 ‘show’란 클래스를 추가하였다.</p>
+
+<p>add - 클래스 추가</p>
+
+<p>remove - 클래스 제거</p>
+
+<p>toggle - 클래스가 존재한다면 클래스를 제거하고, 클래스가 존재하지 않는다면 클래스를 추가</p>
+
+<p>toggle을 사용하면 버튼 한 개로 껐다 켰다를 구현할 수 있다</p>
+:ET
