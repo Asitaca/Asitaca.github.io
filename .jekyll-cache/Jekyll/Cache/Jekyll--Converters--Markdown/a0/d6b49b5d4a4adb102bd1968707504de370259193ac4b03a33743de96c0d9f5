@@ -1,0 +1,29 @@
+I"�	<h3 id="getdate">GETDATE</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">getdate</span><span class="p">()</span> <span class="c1">--결과 : 2022-07-12 17:55:35.137</span>
+</code></pre></div></div>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="nb">year</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="nb">year</span><span class="p">,</span>
+       <span class="k">month</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="k">month</span><span class="p">,</span>
+       <span class="k">day</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="k">day</span>
+</code></pre></div></div>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">--결과</span>
+<span class="nb">year</span>	<span class="k">month</span>	<span class="k">day</span>
+<span class="mi">2022</span>	<span class="mi">7</span>	<span class="mi">12</span>
+</code></pre></div></div>
+
+<h3 id="dateadd">DATEADD</h3>
+
+<p>날짜에 원하는 수를 더해서 출력하는 함수이다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">GETDATE</span><span class="p">()</span> <span class="c1">--결과: 2022-07-13 13:17:51.827</span>
+
+<span class="k">SELECT</span> <span class="n">DATEADD</span><span class="p">(</span><span class="n">MM</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">GETDATE</span><span class="p">())</span> <span class="c1">--결과: 2022-10-13 13:17:51.827</span>
+
+<span class="k">SELECT</span> <span class="n">DATEADD</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="n">GETDATE</span><span class="p">())</span> <span class="c1">--결과: 2022-07-10 13:17:51.827</span>
+</code></pre></div></div>
+
+<p>출처: https://chachahoya.tistory.com/74 [촉촉한 초코니의 말랑말랑한 이야기:티스토리]</p>
+
+<p>[출처] https://coding-factory.tistory.com/108</p>
+
+:ET

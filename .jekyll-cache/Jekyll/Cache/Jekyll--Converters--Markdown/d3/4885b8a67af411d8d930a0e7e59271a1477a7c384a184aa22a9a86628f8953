@@ -1,0 +1,4 @@
+I"y<h3 id="replace">REPLACE</h3>
+<p>~~~sql
+REPLACE(‘문자열’,’치환예정문자’,’치환할문자’)</p>
+:ET

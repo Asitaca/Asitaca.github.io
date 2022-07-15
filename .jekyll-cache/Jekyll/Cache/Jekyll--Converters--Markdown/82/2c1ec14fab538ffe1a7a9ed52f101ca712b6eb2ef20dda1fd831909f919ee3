@@ -1,0 +1,278 @@
+I"1<h3 id="cast">CAST</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CAST(expression AS data_type(length))
+</code></pre></div></div>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">CAST</span><span class="p">(</span><span class="mi">29</span><span class="p">.</span><span class="mi">8</span> <span class="k">AS</span> <span class="nb">INT</span><span class="p">)</span> <span class="cm">/* 정수로 바꿈*/</span>
+<span class="k">SELECT</span> <span class="k">CAST</span><span class="p">(</span><span class="mi">29</span><span class="p">.</span><span class="mi">8</span> <span class="k">AS</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span> <span class="cm">/* 문자로 바꿈 */</span>
+</code></pre></div></div>
+
+<h3 id="convert">CONVERT</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONVERT(data_type[(length)], expression[,style])
+</code></pre></div></div>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">CONVERT</span><span class="p">(</span><span class="nb">INT</span><span class="p">,</span> <span class="mi">29</span><span class="p">.</span><span class="mi">8</span><span class="p">)</span> <span class="c1">--결과 : 29</span>
+<span class="k">SELECT</span> <span class="k">CONVERT</span><span class="p">(</span><span class="nb">VARCHAR</span><span class="p">,</span> <span class="n">GETDATE</span><span class="p">(),</span> <span class="mi">23</span><span class="p">)</span> <span class="c1">--결과 : 2022-07-13</span>
+</code></pre></div></div>
+
+<p>다음은 날짜변환표이다. CONVERT와 GETDATE를 사용하여 날짜를 변환할 때 사용한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">번호</th>
+      <th style="text-align: center">쿼리</th>
+      <th style="text-align: center">결과</th>
+      <th style="text-align: center">코드</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">CONVERT(CHAR(19), DATETIME, 0)</td>
+      <td style="text-align: center">01 02 2000 1:14PM</td>
+      <td style="text-align: center">MM DD YYYY H:MM</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">CONVERT(CHAR(10), DATETIME, 1)</td>
+      <td style="text-align: center">01/02/2000</td>
+      <td style="text-align: center">MM/DD/YYYY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 2)</td>
+      <td style="text-align: center">00.01.02</td>
+      <td style="text-align: center"> YY.MM.DD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 3)</td>
+      <td style="text-align: center">02/01/00</td>
+      <td style="text-align: center">DD/MM/YY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 4)</td>
+      <td style="text-align: center">02.01.00</td>
+      <td style="text-align: center">DD.MM.YY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 5)</td>
+      <td style="text-align: center">02-01-00</td>
+      <td style="text-align: center">DD-MM-YY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 6)</td>
+      <td style="text-align: center">02 01 00</td>
+      <td style="text-align: center">DD MM YY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">CONVERT(CHAR(9), DATETIME, 7)</td>
+      <td style="text-align: center">01 02, 00</td>
+      <td style="text-align: center">MM DD, YY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center"> CONVERT(CHAR(8), DATETIME, 8)</td>
+      <td style="text-align: center">13:14:15</td>
+      <td style="text-align: center">HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: center">CONVERT(CHAR(26), DATETIME, 9)</td>
+      <td style="text-align: center">01 02 2000 1:14:15.678PM</td>
+      <td style="text-align: center">NN DD YYYY H:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 10)</td>
+      <td style="text-align: center">01-02-00</td>
+      <td style="text-align: center">MM-DD-YY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">11</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 11)</td>
+      <td style="text-align: center">02/01/00</td>
+      <td style="text-align: center">DD/MM/YY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: center">CONVERT(CHAR(6), DATETIME, 12)</td>
+      <td style="text-align: center">000102</td>
+      <td style="text-align: center">YYMMDD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">13</td>
+      <td style="text-align: center">CONVERT(CHAR(24), DATETIME, 13)</td>
+      <td style="text-align: center">02 01 2000 13:14:15.678</td>
+      <td style="text-align: center">DD MM YYYY HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: center">CONVERT(CHAR(12), DATETIME, 14)</td>
+      <td style="text-align: center">13:14:15.678</td>
+      <td style="text-align: center">HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">20</td>
+      <td style="text-align: center">CONVERT(CHAR(19), DATETIME, 20)</td>
+      <td style="text-align: center">2000-01-02 13:14:15</td>
+      <td style="text-align: center">YYYY-MM-DD HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">21</td>
+      <td style="text-align: center">CONVERT(CHAR(23), DATETIME, 21)</td>
+      <td style="text-align: center">2000-01-02 13:14:15.678</td>
+      <td style="text-align: center">YYYY-MM-DD HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">22</td>
+      <td style="text-align: center">CONVERT(CHAR(20), DATETIME, 22)</td>
+      <td style="text-align: center">01/02/00 1:14:15 PM</td>
+      <td style="text-align: center">MM/DD/YY H:M:S</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">23</td>
+      <td style="text-align: center">CONVERT(CHAR(10), DATETIME, 23)</td>
+      <td style="text-align: center">2000-01-02</td>
+      <td style="text-align: center">YYYY-MM-DD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">24</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 24)</td>
+      <td style="text-align: center">13:14:15</td>
+      <td style="text-align: center">HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">25</td>
+      <td style="text-align: center">CONVERT(CHAR(23), DATETIME, 25)</td>
+      <td style="text-align: center">2000-01-02 13:14:15.678</td>
+      <td style="text-align: center">YYYY-MM-DD HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">100</td>
+      <td style="text-align: center">CONVERT(CHAR(19), DATETIME, 100)</td>
+      <td style="text-align: center">01 02 2000 1:02PM</td>
+      <td style="text-align: center">MM DD YYYY H:MM</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">101</td>
+      <td style="text-align: center">CONVERT(CHAR(10), DATETIME, 101)</td>
+      <td style="text-align: center">01/02/2000</td>
+      <td style="text-align: center">MM/DD/YYYY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">102</td>
+      <td style="text-align: center">CONVERT(CHAR(10), DATETIME, 102)</td>
+      <td style="text-align: center">2000.01.02</td>
+      <td style="text-align: center">YYYY.MM.DD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">103</td>
+      <td style="text-align: center">CONVERT(CHAR(10), DATETIME, 103)</td>
+      <td style="text-align: center">02/01/2000</td>
+      <td style="text-align: center">DD/MM/YYYY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">104</td>
+      <td style="text-align: center">CONVERT(CHAR(10), DATETIME, 104)</td>
+      <td style="text-align: center">02/01/2000</td>
+      <td style="text-align: center">DD/MM/YYYY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">105</td>
+      <td style="text-align: center">ONVERT(CHAR(10), DATETIME, 105)</td>
+      <td style="text-align: center">02-01-2000</td>
+      <td style="text-align: center">DD-MM-YYYY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">106</td>
+      <td style="text-align: center">CONVERT(CHAR(11), DATETIME, 106)</td>
+      <td style="text-align: center">02 01 2000</td>
+      <td style="text-align: center">DD MM YYYY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">107</td>
+      <td style="text-align: center">CONVERT(CHAR(12), DATETIME, 107)</td>
+      <td style="text-align: center">01 02, 2000</td>
+      <td style="text-align: center">MM DD, YYYY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">108</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 108)</td>
+      <td style="text-align: center">13:14:15</td>
+      <td style="text-align: center">HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">109</td>
+      <td style="text-align: center">CONVERT(CHAR(26), DATETIME, 109)</td>
+      <td style="text-align: center">01 02 2000 1:14:15.678PM</td>
+      <td style="text-align: center">MM DD YYYY H:MM:DD.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">110</td>
+      <td style="text-align: center">CONVERT(CHAR(10), DATETIME, 110)</td>
+      <td style="text-align: center">01-02-2000</td>
+      <td style="text-align: center">MM-DD-YYYY</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">111</td>
+      <td style="text-align: center">CONVERT(CHAR(10), DATETIME, 111)</td>
+      <td style="text-align: center">2000/01/02</td>
+      <td style="text-align: center">YYYY/MM/DD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">112</td>
+      <td style="text-align: center">CONVERT(CHAR(8), DATETIME, 112)</td>
+      <td style="text-align: center">20000102</td>
+      <td style="text-align: center">YYYYMMDD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">113</td>
+      <td style="text-align: center">CONVERT(CHAR(24), DATETIME, 113)</td>
+      <td style="text-align: center">02 01 2000 13:14:15.678</td>
+      <td style="text-align: center">DD MM YYYY HH:MM:DD.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">114</td>
+      <td style="text-align: center">CONVERT(CHAR(12), DATETIME, 114)</td>
+      <td style="text-align: center">13:14:15:678</td>
+      <td style="text-align: center">HH:MM:DD:MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">120</td>
+      <td style="text-align: center">CONVERT(CHAR(19), DATETIME, 120)</td>
+      <td style="text-align: center">2000-01-02 13:14:15</td>
+      <td style="text-align: center">YYYY-MM-DD HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">121</td>
+      <td style="text-align: center">CONVERT(CHAR(23), DATETIME, 121)</td>
+      <td style="text-align: center">2000-01-02 13:14:15.678</td>
+      <td style="text-align: center">YYYY-MM-DD HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">126</td>
+      <td style="text-align: center">CONVERT(CHAR(23), DATETIME, 126)</td>
+      <td style="text-align: center">2000-01-02T13:14:15.678</td>
+      <td style="text-align: center">YYYY-MM-DDT HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">127</td>
+      <td style="text-align: center">CONVERT(CHAR(23), DATETIME, 127)</td>
+      <td style="text-align: center">2000-01-02T13:14:15.678</td>
+      <td style="text-align: center">YYYY-MM-DDT HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">131</td>
+      <td style="text-align: center">CONVERT(CHAR(25), DATETIME, 131)</td>
+      <td style="text-align: center">1/06/1421 1:13:14:678PM</td>
+      <td style="text-align: center">빈칸</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>[출처] https://coding-factory.tistory.com/100</p>
+
+:ET

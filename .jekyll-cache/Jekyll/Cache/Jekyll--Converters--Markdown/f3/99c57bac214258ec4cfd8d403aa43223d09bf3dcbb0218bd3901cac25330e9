@@ -1,0 +1,106 @@
+I"�<table>
+  <tbody>
+    <tr>
+      <td>getElementById</td>
+      <td>ID</td>
+    </tr>
+    <tr>
+      <td>getElementsByClassName</td>
+      <td>class</td>
+    </tr>
+    <tr>
+      <td>getElementsByTagName</td>
+      <td>Tag</td>
+    </tr>
+    <tr>
+      <td>getElementsByName</td>
+      <td>name</td>
+    </tr>
+    <tr>
+      <td>querySelector</td>
+      <td>선택자</td>
+    </tr>
+    <tr>
+      <td>querySelectorAll</td>
+      <td>선택자</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="getelementbyid-getelementsbyclassname-getelementsbytagname-getelementsbyname">getElementById, getElementsByClassName, getElementsByTagName, getElementsByName</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"hi"</span><span class="nt">&gt;</span>반갑습니다<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">hi</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">안녕</span><span class="dl">'</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span> 
+</code></pre></div></div>
+
+<p>‘id’ 가 ‘hi’인 부분을 찾아서 ‘반갑습니다’를 <span style="color:red">‘안녕’</span> 으로 변경해준다</p>
+
+<hr />
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"hi"</span><span class="nt">&gt;</span>반갑습니다<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"hi"</span><span class="nt">&gt;</span>안녕<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"hi"</span><span class="nt">&gt;</span>잘가<span class="nt">&lt;/h1&gt;</span>
+
+
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">hi</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">안녕</span><span class="dl">'</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span> 
+</code></pre></div></div>
+
+<p>찾고자 하는 요소가 중복될 때 차례대로 [0],[1],[2]… 순서를 붙여 찾을 수 있다.<br />
+뒤에 숫자를 붙이지 않고 찾게 되면 맨 처음에 있는 요소를 찾는다. 
+ID의 경우 유니크해야하므로 중복되서도 안되고 중복된다 해도 이 방법을 사용할 수 없다.</p>
+
+<hr />
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">;</span> 
+<span class="c1">//칼라 변경</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">20px</span><span class="dl">'</span><span class="p">;</span>
+<span class="c1">//폰트사이즈 변경</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>이런식으로 css부분도 변경할 수 있다.</p>
+
+<hr />
+
+<h3 id="queryselector-queryselectorall">querySelector, querySelectorAll</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"hello"</span><span class="nt">&gt;</span>이건 첫번째 클래스!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"hello"</span><span class="nt">&gt;</span>이건 아이디!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"hello"</span><span class="nt">&gt;</span>이건 두번째 클래스!<span class="nt">&lt;/h1&gt;</span>
+
+
+<span class="nt">&lt;script&gt;</span>
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.hello</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">안녕</span><span class="dl">'</span><span class="p">;</span>
+  <span class="c1">//찾게될 요소가 클래스일 경우 요소 앞에 '.' 을 붙인다</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#hello</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">안녕</span><span class="dl">'</span><span class="p">;</span>
+  <span class="c1">//찾게될 요소가 아이디일 경우 요소 앞에 '#' 을 붙인다</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">h1</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">안녕</span><span class="dl">'</span><span class="p">;</span>
+  <span class="c1">//찾게될 요소가 태그일 경우 요소 아무것도 붙이지 않는다</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">.hello</span><span class="dl">'</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">잘가</span><span class="dl">'</span><span class="p">;</span>
+  <span class="c1">//요소가 중복될 경우 뒤에 숫자를 붙여 찾을 수 있다</span>
+
+<span class="nt">&lt;/script&gt;</span> 
+</code></pre></div></div>
+
+<p>querySelector는 본문의 가장 첫 번째 요소를 찾을 수 있고,  <br />
+querySelectorAll는 찾고자 하는 요소가 중복될 때 차례대로 [0],[1],[2]… 순서를 붙여 찾을 수 있다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[출처] char/varchar 와 nchar/nvarchar 비교</td>
+      <td>작성자 독선생</td>
+    </tr>
+  </tbody>
+</table>
+:ET

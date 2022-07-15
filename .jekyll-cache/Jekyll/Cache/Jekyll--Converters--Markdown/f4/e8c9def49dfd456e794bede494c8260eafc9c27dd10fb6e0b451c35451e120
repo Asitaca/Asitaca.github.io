@@ -1,0 +1,7 @@
+I"�<h3 id="substring">SUBSTRING</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SUBSTRING</span><span class="p">(</span><span class="err">문자열</span><span class="p">,</span><span class="err">시작위치</span><span class="p">,</span><span class="err">자를문자수</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>[출처] https://coding-factory.tistory.com</p>
+
+:ET

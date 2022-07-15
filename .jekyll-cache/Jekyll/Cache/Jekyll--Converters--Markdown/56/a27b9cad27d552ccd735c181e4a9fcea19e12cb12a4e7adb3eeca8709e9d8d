@@ -1,0 +1,69 @@
+I")<h3 id="1charvarchar-와-ncharnvarchar-비교">1.char/varchar 와 nchar/nvarchar 비교</h3>
+
+<p>한글(유니코드)은 2바이트의 자리를 차지하기 때문에</p>
+
+<p>char/varchar 형식으로 정의할 경우에는 2배의 자릿수를 준비해야한다.</p>
+
+<p>최대 3글자의 한글을 저장하고자 한다면 char(6) /varchar(6)로 데이터 형식을 지정해야한다.</p>
+
+<p>반면, nchar(3)/nvarchar(3)으로 지정하면 한글이든 영문이든 무조건 3글자를  저장할수 있어서</p>
+
+<p>더 단순하고 명료하게 문자 데이터를 입력할 수 있다</p>
+
+<h3 id="2결론">2.결론</h3>
+
+<p>다만 한글(유니코드)을 저장하지 않을 것이 확실하다면  nchar/nvarchar보다 char/varchar가 더 공간을 적게 차지해서 성능향상에 도움이 된다 . 대용량 데이터 베이스 에서 더욱 그렇다.</p>
+
+<h4 id="nchar-및-nvarchar">NChar 및 NVarChar</h4>
+<p>고정 길이(nchar) 또는 가변 길이(nvarchar) 유니코드 데이터이며 UNICODE UCS-2 문자 집합을 사용하는 문자 데이터 형식입니다.</p>
+
+<h4 id="ncharn">nchar(n)</h4>
+
+<p>n자인 고정 길이 유니코드 문자 데이터입니다. n은 1에서 4.000 사이의 값이어야 합니다. 저장소 크기는 n바이트의 두 배입니다.  nchar의 SQL-92 동의어는 national char와 national character입니다.</p>
+
+<h4 id="nvarcharn">nvarchar(n)</h4>
+
+<p>n개의 가변 길이 유니코드 문자 데이터입니다. n은 1에서 4.000 사이의 값이어야 합니다. 저장소 크기는 바이트로 입력된 문자 개수의 두 배입니다. 입력한 데이터의 길이가 0일수도 있습니다. nvarchar의 SQL-92 동의어는 national char varying과 national character varying입니다.</p>
+
+<h4 id="char-및-varchar">Char 및 VarChar</h4>
+<p>고정 길이(char) 또는 가변 길이(varchar) 문자 데이터 형식입니다.</p>
+
+<h4 id="charn">char[(n)]</h4>
+
+<p>유니코드가 아니고, 길이가 n바이트인 고정 길이 문자 데이터입니다. n은 1에서 8,000 사이의 값이어야 하고 저장소 크기는 n바이트입니다. char의 SQL-92 동의어는 character입니다.</p>
+
+<h4 id="varcharn">varchar[(n)]</h4>
+
+<p>유니코드가 아니고, 길이가 n바이트인 가변 길이 문자 데이터입니다. n은 1에서 8,000 사이의 값이어야 하고 저장소 크기는 n바이트가 아니라 입력한 데이터의 실제 바이트 길이입니다. 입력한 데이터의 길이는 0일 수 있습니다. varchar의 SQL-92 동의어는 char varying 또는 character varying입니다.</p>
+
+<h4 id="유니코드-데이터">유니코드 데이터</h4>
+
+<p>Microsoft® SQL Server™ 2000에서 유니코드가 아닌 일반적인 데이터 형식은 특정 문자 집합에서 정의된 문자를 사용합니다. 문자 집합은 SQL Server 설치 중에 선택되므로 변경할 수 없습니다. 유니코드 데이터 형식을 사용하면 여러 문자 집합에서 정의된 모든 문자가 들어 있는 유니코드 표준에서 정의된 문자를 열에 저장할 수 있습니다. 유니코드 데이터 형식을 저장하려면 유니코드가 아닌 데이터 형식보다 두 배의 공간이 필요합니다.</p>
+
+<p>SQL Server에서 유니코드 데이터는 nchar, nvarchar 및 ntext 데이터 형식으로 저장됩니다. 이 데이터 형식은 둘 이상의 문자 집합에 있는 문자를 저장할 때 사용하십시오. 열에 최대 4,000개까지 들어가는 유니코드의 문자 수가 변할 때는 nvarchar을 사용하십시오. 열에 최대 4,000개까지 들어가는 유니코드의 문자 수가 고정될 때는 nchar을사용하십시오. 열에 들어가는 문자 수가 4,000 이상일 때는 ntext을 사용하십시오.</p>
+
+<h4 id="참고">참고</h4>
+
+<p>SQL Server 유니코드 데이터 형식은 SQL-92 표준의 국가 표준 문자 데이터 형식에 기반합니다. SQL-92는 접두사 문자 n을 사용하여 데이터 형식 및 값을 식별합니다.</p>
+
+<h4 id="정리">정리</h4>
+
+<ul>
+  <li>
+    <p>VarChar는 영문 데이터형이나 설정된 기본 언어형으로 저장할 때 사용된다.</p>
+  </li>
+  <li>
+    <p>NVarChar는 유니코드 (UNICODE UCS-2) 지원을 위한 데이터이다. 
+NVarChar는 VarChar보다 동일 데이터 저장시 공간을 2배 사용한다.</p>
+
+    <p>다국어 지원이 필요한 DB에 적합하다.</p>
+  </li>
+  <li>
+    <p>DB 설계 단계에서 다국어 지원이 필요할 경우 NVarChar, NChar, NText로</p>
+  </li>
+</ul>
+
+<p>구조를 짜는게 좋다.</p>
+
+<p>[출처] https://blog.naver.com/newcomsa/30081390512</p>
+:ET

@@ -1,0 +1,24 @@
+I"�<h3 id="format">FORMAT</h3>
+
+<p>2012버전 부터 추가된 함수이다.</p>
+
+<ul>
+  <li>날짜 문자열 변환</li>
+  <li>수치값 천단위 콤마 찍기</li>
+  <li>수치값 소수점 표시</li>
+</ul>
+
+<h4 id="날짜-문자열-변환">날짜 문자열 변환</h4>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">GETDATE</span><span class="p">()</span> <span class="c1">--결과: 2022-07-14 14:37:53.627</span>
+	 <span class="p">,</span> <span class="n">FORMAT</span><span class="p">(</span><span class="n">GETDATE</span><span class="p">(),</span> <span class="s1">'yyyy-MM-dd'</span><span class="p">)</span> <span class="c1">--결과: 2022-07-14</span>
+     <span class="p">,</span> <span class="n">FORMAT</span><span class="p">(</span><span class="n">GETDATE</span><span class="p">(),</span> <span class="s1">'yyyy-MM-dd HH:mm:ss'</span><span class="p">)</span> <span class="c1">--결과: 2022-07-14 14:37:53</span>
+	 <span class="p">,</span> <span class="n">FORMAT</span><span class="p">(</span><span class="n">GETDATE</span><span class="p">(),</span> <span class="s1">'yyyyMMdd'</span><span class="p">)</span> <span class="c1">--결과: 20220714</span>
+     <span class="p">,</span> <span class="n">FORMAT</span><span class="p">(</span><span class="n">GETDATE</span><span class="p">(),</span> <span class="s1">'HH:mm:ss'</span><span class="p">)</span> <span class="c1">--결과: 14:37:53</span>
+     <span class="p">,</span> <span class="n">FORMAT</span><span class="p">(</span><span class="n">GETDATE</span><span class="p">(),</span> <span class="s1">'hh:mm:ss tt'</span><span class="p">)</span> <span class="c1">--결과: 02:37:53 오후</span>
+     <span class="p">,</span> <span class="n">FORMAT</span><span class="p">(</span><span class="n">GETDATE</span><span class="p">(),</span> <span class="s1">'t'</span><span class="p">)</span> <span class="c1">--결과: 오후 2:37</span>
+	 <span class="p">,</span> <span class="n">FORMAT</span><span class="p">(</span><span class="n">GETDATE</span><span class="p">(),</span> <span class="s1">'tt'</span><span class="p">)</span> <span class="c1">--결과: 오후</span>
+</code></pre></div></div>
+
+<p>[출처] https://coding-factory.tistory.com</p>
+
+:ET

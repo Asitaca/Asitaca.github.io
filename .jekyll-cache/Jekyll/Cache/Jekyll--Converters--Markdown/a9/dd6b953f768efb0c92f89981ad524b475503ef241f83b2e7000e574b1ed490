@@ -1,0 +1,70 @@
+I"�<h3 id="getdate">GETDATE</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">getdate</span><span class="p">()</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2022-07-12 17:55:35.137
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="nb">year</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="nb">year</span><span class="p">,</span>
+       <span class="k">month</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="k">month</span><span class="p">,</span>
+       <span class="k">day</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="k">day</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>year	month	day
+2022	7	12
+</code></pre></div></div>
+
+<h3 id="convert">CONVERT</h3>
+
+<p>| 번호 | 쿼리 | 결과 | 코드 |
+|—|—|—|—|
+| 0 | CONVERT(CHAR(19), DATETIME, 0) | 01 02 2000 1:14PM | MM DD YYYY H:MM |
+| 1 | CONVERT(CHAR(10), DATETIME, 1) | 01/02/2000 | MM/DD/YYYY |
+| 2 | CONVERT(CHAR(8), DATETIME, 2) | 00.01.02 | YY.MM.DD |
+| 3 | CONVERT(CHAR(8), DATETIME, 3) | 02/01/00 | DD/MM/YY |
+| 4 | CONVERT(CHAR(8), DATETIME, 4) | 02.01.00 | DD.MM.YY |
+| 5 | CONVERT(CHAR(8), DATETIME, 5) | 02-01-00 | DD-MM-YY |
+| 6 | CONVERT(CHAR(8), DATETIME, 6) | 02 01 00 | DD MM YY |
+| 7 | CONVERT(CHAR(9), DATETIME, 7) | 01 02, 00| MM DD, YY |
+| 8 | CONVERT(CHAR(8), DATETIME, 8) | 13:14:15| HH:MM:SS |
+| 9 | CONVERT(CHAR(26), DATETIME, 9) | 01 02 2000 1:14:15.678PM | NN DD YYYY H:MM:SS.MS |
+| 10 | CONVERT(CHAR(8), DATETIME, 10) | 01-02-00 | MM-DD-YY |
+| 11 | CONVERT(CHAR(8), DATETIME, 11) | 02/01/00 | DD/MM/YY |
+| 12 | CONVERT(CHAR(6), DATETIME, 12) | 000102 | YYMMDD |
+| 13 | CONVERT(CHAR(24), DATETIME, 13) | 02 01 2000 13:14:15.678 | DD MM YYYY HH:MM:SS.MS |
+| 14 | CONVERT(CHAR(12), DATETIME, 14) | 13:14:15.678 | HH:MM:SS.MS |
+| 20 | CONVERT(CHAR(19), DATETIME, 20) | 2000-01-02 13:14:15 | YYYY-MM-DD HH:MM:SS |
+| 21 | CONVERT(CHAR(23), DATETIME, 21) | 2000-01-02 13:14:15.678 | YYYY-MM-DD HH:MM:SS.MS |
+| 22 | CONVERT(CHAR(20), DATETIME, 22) | 01/02/00 1:14:15 PM | MM/DD/YY H:M:S |
+| 23 | CONVERT(CHAR(10), DATETIME, 23) | 2000-01-02 | YYYY-MM-DD |
+| 24 | CONVERT(CHAR(8), DATETIME, 24) | 13:14:15 | HH:MM:SS |
+| 25 | CONVERT(CHAR(23), DATETIME, 25) | 2000-01-02 13:14:15.678 | YYYY-MM-DD HH:MM:SS.MS |
+| 100 | CONVERT(CHAR(19), DATETIME, 100) | 01 02 2000 1:02PM | MM DD YYYY H:MM |
+| 101 | CONVERT(CHAR(10), DATETIME, 101) | 01/02/2000 | MM/DD/YYYY |
+| 102 | CONVERT(CHAR(10), DATETIME, 102) | 2000.01.02 | YYYY.MM.DD |
+| 103 | CONVERT(CHAR(10), DATETIME, 103) | 02/01/2000 | DD/MM/YYYY |
+| 104 | CONVERT(CHAR(10), DATETIME, 104) | 02/01/2000 | DD/MM/YYYY |
+| 105 | ONVERT(CHAR(10), DATETIME, 105) | 02-01-2000 | DD-MM-YYYY |
+| 106 | CONVERT(CHAR(11), DATETIME, 106) | 02 01 2000 | DD MM YYYY |
+| 107 | CONVERT(CHAR(12), DATETIME, 107) | 01 02, 2000 | MM DD, YYYY |
+| 108 | CONVERT(CHAR(8), DATETIME, 108) | 13:14:15 | HH:MM:SS |
+|109| CONVERT(CHAR(26), DATETIME, 109)| 01 02 2000 1:14:15.678PM| MM DD YYYY H:MM:DD.MS|
+|110| CONVERT(CHAR(10), DATETIME, 110)| 01-02-2000| MM-DD-YYYY|
+|111| CONVERT(CHAR(10), DATETIME, 111)| 2000/01/02| YYYY/MM/DD|
+|112| CONVERT(CHAR(8), DATETIME, 112)| 20000102| YYYYMMDD|
+|113| CONVERT(CHAR(24), DATETIME, 113)| 02 01 2000 13:14:15.678| DD MM YYYY HH:MM:DD.MS|
+|114| CONVERT(CHAR(12), DATETIME, 114)| 13:14:15:678| HH:MM:DD:MS|
+|120| CONVERT(CHAR(19), DATETIME, 120)| 2000-01-02 13:14:15| YYYY-MM-DD HH:MM:SS|
+|121| CONVERT(CHAR(23), DATETIME, 121)| 2000-01-02 13:14:15.678|YYYY-MM-DD HH:MM:SS.MS|
+|126| CONVERT(CHAR(23), DATETIME, 126)| 2000-01-02T13:14:15.678| YYYY-MM-DDT HH:MM:SS.MS|
+|127| CONVERT(CHAR(23), DATETIME, 127)| 2000-01-02T13:14:15.678| YYYY-MM-DDT HH:MM:SS.MS|
+|131| CONVERT(CHAR(25), DATETIME, 131)| 1/06/1421 1:13:14:678PM||
+　</p>
+
+<p>　
+출처: https://chachahoya.tistory.com/74 [촉촉한 초코니의 말랑말랑한 이야기:티스토리]</p>
+
+<p>[출처] https://coding-factory.tistory.com/108</p>
+
+:ET

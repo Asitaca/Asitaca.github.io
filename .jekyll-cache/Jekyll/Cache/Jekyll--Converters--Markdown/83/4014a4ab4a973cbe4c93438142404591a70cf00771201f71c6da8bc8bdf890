@@ -1,0 +1,4 @@
+I"g<h3 id="substring">SUBSTRING</h3>
+<p>~~~sql
+SUBSTRING(문자열,시작위치,자를문자수)</p>
+:ET

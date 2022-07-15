@@ -1,0 +1,278 @@
+I"�<h3 id="getdate">GETDATE</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">getdate</span><span class="p">()</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2022-07-12 17:55:35.137
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="nb">year</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="nb">year</span><span class="p">,</span>
+       <span class="k">month</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="k">month</span><span class="p">,</span>
+       <span class="k">day</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="k">day</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>year	month	day
+2022	7	12
+</code></pre></div></div>
+
+<h3 id="convert">CONVERT</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>번호</th>
+      <th>쿼리</th>
+      <th>결과</th>
+      <th>코드</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>CONVERT(CHAR(19), DATETIME, 0)</td>
+      <td>01 02 2000 1:14PM</td>
+      <td>MM DD YYYY H:MM</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>CONVERT(CHAR(10), DATETIME, 1)</td>
+      <td>01/02/2000</td>
+      <td>MM/DD/YYYY</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>CONVERT(CHAR(8), DATETIME, 2)</td>
+      <td>00.01.02</td>
+      <td> YY.MM.DD</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>CONVERT(CHAR(8), DATETIME, 3)</td>
+      <td>02/01/00</td>
+      <td>DD/MM/YY</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>CONVERT(CHAR(8), DATETIME, 4)</td>
+      <td>02.01.00</td>
+      <td>DD.MM.YY</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>CONVERT(CHAR(8), DATETIME, 5)</td>
+      <td>02-01-00</td>
+      <td>DD-MM-YY</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>CONVERT(CHAR(8), DATETIME, 6)</td>
+      <td>02 01 00</td>
+      <td>DD MM YY</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>CONVERT(CHAR(9), DATETIME, 7)</td>
+      <td>01 02, 00</td>
+      <td>MM DD, YY</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td> CONVERT(CHAR(8), DATETIME, 8)</td>
+      <td>13:14:15</td>
+      <td>HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>CONVERT(CHAR(26), DATETIME, 9)</td>
+      <td>01 02 2000 1:14:15.678PM</td>
+      <td>NN DD YYYY H:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>CONVERT(CHAR(8), DATETIME, 10)</td>
+      <td>01-02-00</td>
+      <td>MM-DD-YY</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>CONVERT(CHAR(8), DATETIME, 11)</td>
+      <td>02/01/00</td>
+      <td>DD/MM/YY</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>CONVERT(CHAR(6), DATETIME, 12)</td>
+      <td>000102</td>
+      <td>YYMMDD</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>CONVERT(CHAR(24), DATETIME, 13)</td>
+      <td>02 01 2000 13:14:15.678</td>
+      <td>DD MM YYYY HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>CONVERT(CHAR(12), DATETIME, 14)</td>
+      <td>13:14:15.678</td>
+      <td>HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>CONVERT(CHAR(19), DATETIME, 20)</td>
+      <td>2000-01-02 13:14:15</td>
+      <td>YYYY-MM-DD HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>CONVERT(CHAR(23), DATETIME, 21)</td>
+      <td>2000-01-02 13:14:15.678</td>
+      <td>YYYY-MM-DD HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>CONVERT(CHAR(20), DATETIME, 22)</td>
+      <td>01/02/00 1:14:15 PM</td>
+      <td>MM/DD/YY H:M:S</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>CONVERT(CHAR(10), DATETIME, 23)</td>
+      <td>2000-01-02</td>
+      <td>YYYY-MM-DD</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>CONVERT(CHAR(8), DATETIME, 24)</td>
+      <td>13:14:15</td>
+      <td>HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>CONVERT(CHAR(23), DATETIME, 25)</td>
+      <td>2000-01-02 13:14:15.678</td>
+      <td>YYYY-MM-DD HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>CONVERT(CHAR(19), DATETIME, 100)</td>
+      <td>01 02 2000 1:02PM</td>
+      <td>MM DD YYYY H:MM</td>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>CONVERT(CHAR(10), DATETIME, 101)</td>
+      <td>01/02/2000</td>
+      <td>MM/DD/YYYY</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>CONVERT(CHAR(10), DATETIME, 102)</td>
+      <td>2000.01.02</td>
+      <td>YYYY.MM.DD</td>
+    </tr>
+    <tr>
+      <td>103</td>
+      <td>CONVERT(CHAR(10), DATETIME, 103)</td>
+      <td>02/01/2000</td>
+      <td>DD/MM/YYYY</td>
+    </tr>
+    <tr>
+      <td>104</td>
+      <td>CONVERT(CHAR(10), DATETIME, 104)</td>
+      <td>02/01/2000</td>
+      <td>DD/MM/YYYY</td>
+    </tr>
+    <tr>
+      <td>105</td>
+      <td>ONVERT(CHAR(10), DATETIME, 105)</td>
+      <td>02-01-2000</td>
+      <td>DD-MM-YYYY</td>
+    </tr>
+    <tr>
+      <td>106</td>
+      <td>CONVERT(CHAR(11), DATETIME, 106)</td>
+      <td>02 01 2000</td>
+      <td>DD MM YYYY</td>
+    </tr>
+    <tr>
+      <td>107</td>
+      <td>CONVERT(CHAR(12), DATETIME, 107)</td>
+      <td>01 02, 2000</td>
+      <td>MM DD, YYYY</td>
+    </tr>
+    <tr>
+      <td>108</td>
+      <td>CONVERT(CHAR(8), DATETIME, 108)</td>
+      <td>13:14:15</td>
+      <td>HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td>109</td>
+      <td>CONVERT(CHAR(26), DATETIME, 109)</td>
+      <td>01 02 2000 1:14:15.678PM</td>
+      <td>MM DD YYYY H:MM:DD.MS</td>
+    </tr>
+    <tr>
+      <td>110</td>
+      <td>CONVERT(CHAR(10), DATETIME, 110)</td>
+      <td>01-02-2000</td>
+      <td>MM-DD-YYYY</td>
+    </tr>
+    <tr>
+      <td>111</td>
+      <td>CONVERT(CHAR(10), DATETIME, 111)</td>
+      <td>2000/01/02</td>
+      <td>YYYY/MM/DD</td>
+    </tr>
+    <tr>
+      <td>112</td>
+      <td>CONVERT(CHAR(8), DATETIME, 112)</td>
+      <td>20000102</td>
+      <td>YYYYMMDD</td>
+    </tr>
+    <tr>
+      <td>113</td>
+      <td>CONVERT(CHAR(24), DATETIME, 113)</td>
+      <td>02 01 2000 13:14:15.678</td>
+      <td>DD MM YYYY HH:MM:DD.MS</td>
+    </tr>
+    <tr>
+      <td>114</td>
+      <td>CONVERT(CHAR(12), DATETIME, 114)</td>
+      <td>13:14:15:678</td>
+      <td>HH:MM:DD:MS</td>
+    </tr>
+    <tr>
+      <td>120</td>
+      <td>CONVERT(CHAR(19), DATETIME, 120)</td>
+      <td>2000-01-02 13:14:15</td>
+      <td>YYYY-MM-DD HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td>121</td>
+      <td>CONVERT(CHAR(23), DATETIME, 121)</td>
+      <td>2000-01-02 13:14:15.678</td>
+      <td>YYYY-MM-DD HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td>126</td>
+      <td>CONVERT(CHAR(23), DATETIME, 126)</td>
+      <td>2000-01-02T13:14:15.678</td>
+      <td>YYYY-MM-DDT HH:MM:SS.MS</td>
+    </tr>
+    <tr>
+      <td>127</td>
+      <td>CONVERT(CHAR(23), DATETIME, 127)</td>
+      <td>2000-01-02T13:14:15.678</td>
+      <td>YYYY-MM-DDT HH:MM:SS.MS</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>　
+출처: https://chachahoya.tistory.com/74 [촉촉한 초코니의 말랑말랑한 이야기:티스토리]</p>
+
+<p>[출처] https://coding-factory.tistory.com/108</p>
+
+:ET

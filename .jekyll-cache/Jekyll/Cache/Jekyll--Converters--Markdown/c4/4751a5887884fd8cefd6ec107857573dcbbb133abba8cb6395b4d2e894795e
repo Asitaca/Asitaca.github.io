@@ -1,0 +1,24 @@
+I"�<h3 id="getdate">GETDATE</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">getdate</span><span class="p">()</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2022-07-12 17:55:35.137
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="nb">year</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="nb">year</span><span class="p">,</span>
+       <span class="k">month</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="k">month</span><span class="p">,</span>
+       <span class="k">day</span><span class="p">(</span><span class="n">getdate</span><span class="p">())</span> <span class="k">as</span> <span class="k">day</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>year	month	day
+2022	7	12
+</code></pre></div></div>
+
+<h3 id="convert">CONVERT</h3>
+
+<p>출처: https://chachahoya.tistory.com/74 [촉촉한 초코니의 말랑말랑한 이야기:티스토리]</p>
+
+<p>[출처] https://coding-factory.tistory.com/108</p>
+
+:ET

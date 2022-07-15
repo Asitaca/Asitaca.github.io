@@ -1,0 +1,7 @@
+I"�<h3 id="cast">CAST</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CAST(expression AS data_type(length))
+</code></pre></div></div>
+
+<p>[출처] https://coding-factory.tistory.com/100</p>
+
+:ET

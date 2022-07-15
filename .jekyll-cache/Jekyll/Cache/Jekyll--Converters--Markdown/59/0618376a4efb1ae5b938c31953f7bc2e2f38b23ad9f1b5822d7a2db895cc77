@@ -1,0 +1,22 @@
+I"�	<h3 id="replace">REPLACE</h3>
+
+<p>지정한 문자를 다른 문자로 바꿔주는 함수이다.</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">REPLACE</span><span class="p">(</span><span class="s1">'문자열'</span><span class="p">,</span><span class="s1">'치환하고싶은문자'</span><span class="p">,</span><span class="s1">'치환할문자'</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="k">REPLACE</span><span class="p">(</span><span class="s1">'my name is blue'</span><span class="p">,</span><span class="s1">'blue'</span><span class="p">,</span><span class="s1">'red'</span><span class="p">)</span> <span class="c1">--결과: my name is red</span>
+</code></pre></div></div>
+
+<h3 id="stuff">STUFF</h3>
+
+<p>시작위치와 끝날 위치를 지정하여 다른 문자로 바꿔주는 함수이다.</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">STUFF</span><span class="p">(</span><span class="s1">'문자열'</span><span class="p">,</span><span class="s1">'시작위치'</span><span class="p">,</span><span class="s1">'끝날위치'</span><span class="p">,</span><span class="s1">'치환할문자'</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="n">STUFF</span><span class="p">(</span><span class="s1">'1234567890'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">'*'</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="n">STUFF</span><span class="p">(</span><span class="s1">'1234567890'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'*'</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="n">STUFF</span><span class="p">(</span><span class="s1">'1234567890'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'*'</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="n">STUFF</span><span class="p">(</span><span class="s1">'1234567890'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'*!'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>[출처] https://coding-factory.tistory.com</p>
+
+:ET

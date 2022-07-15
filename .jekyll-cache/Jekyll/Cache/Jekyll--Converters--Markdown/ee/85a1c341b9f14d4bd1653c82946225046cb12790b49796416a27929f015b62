@@ -1,0 +1,16 @@
+I"p<h3 id="timefromparts">TIMEFROMPARTS</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TIMEFROMPARTS</span> <span class="p">(</span> <span class="n">hour</span><span class="p">,</span> <span class="k">minute</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="nb">precision</span> <span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li>hour<br />
+시간을 지정하는 정수 식입니다.</li>
+  <li>minute
+분을 지정하는 정수 식입니다.</li>
+  <li>초
+초를 지정하는 정수 식입니다.</li>
+  <li>fractions
+소수 자릿수를 지정하는 정수 식입니다.</li>
+  <li>전체 자릿수
+반환할 time 값의 전체 자릿수를 지정하는 정수 리터럴입니다.</li>
+</ul>
+:ET

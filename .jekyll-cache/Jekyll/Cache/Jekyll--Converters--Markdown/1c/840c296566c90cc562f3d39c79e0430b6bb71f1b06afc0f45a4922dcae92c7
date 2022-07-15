@@ -1,0 +1,9 @@
+I"�<h3 id="replace">REPLACE</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">REPLACE</span><span class="p">(</span><span class="s1">'문자열'</span><span class="p">,</span><span class="s1">'치환예정문자'</span><span class="p">,</span><span class="s1">'치환할문자'</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="k">REPLACE</span><span class="p">(</span><span class="s1">'my name is blue'</span><span class="p">,</span><span class="s1">'blue'</span><span class="p">,</span><span class="s1">'red'</span><span class="p">)</span> <span class="c1">--결과: my name is red</span>
+</code></pre></div></div>
+
+<p>[출처] https://coding-factory.tistory.com</p>
+
+:ET

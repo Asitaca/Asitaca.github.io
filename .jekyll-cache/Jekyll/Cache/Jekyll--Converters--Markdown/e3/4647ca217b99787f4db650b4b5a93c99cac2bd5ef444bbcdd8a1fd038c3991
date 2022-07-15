@@ -1,0 +1,9 @@
+I".<h3 id="getdate">GETDATE</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">select</span> <span class="n">getdate</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<p>[출처] https://blog.naver.com/newcomsa/30081390512</p>
+:ET

@@ -1,0 +1,14 @@
+I"�<h3 id="cast">CAST</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CAST(expression AS data_type(length))
+</code></pre></div></div>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">CAST</span><span class="p">(</span><span class="mi">29</span><span class="p">.</span><span class="mi">8</span> <span class="k">AS</span> <span class="nb">INT</span><span class="p">)</span> <span class="cm">/* 정수로 바꿈*/</span>
+<span class="k">SELECT</span> <span class="k">CAST</span><span class="p">(</span><span class="mi">29</span><span class="p">.</span><span class="mi">8</span> <span class="k">AS</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span> <span class="cm">/* 문자로 바꿈 */</span>
+</code></pre></div></div>
+
+<h3 id="convert">CONVERT</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONVERT ( data_type [ ( length ) ] , expression [ , style ] )
+</code></pre></div></div>
+
+<p>[출처] https://coding-factory.tistory.com/100</p>
+
+:ET

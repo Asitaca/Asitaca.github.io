@@ -1,0 +1,4 @@
+I"ï<h3 id="substring">SUBSTRING</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TIMEFROMPARTS</span> <span class="p">(</span> <span class="n">hour</span><span class="p">,</span> <span class="k">minute</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="nb">precision</span> <span class="p">)</span>
+</code></pre></div></div>
+:ET

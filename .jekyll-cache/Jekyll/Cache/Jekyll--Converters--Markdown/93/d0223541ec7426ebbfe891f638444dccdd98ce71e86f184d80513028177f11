@@ -1,0 +1,4 @@
+I"¾<h3 id="cast">CAST</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CAST(expression AS data_type(length))
+</code></pre></div></div>
+:ET

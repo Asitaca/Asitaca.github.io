@@ -1,0 +1,9 @@
+I"�<h3 id="substring">SUBSTRING</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SUBSTRING</span><span class="p">(</span><span class="err">문자열</span><span class="p">,</span><span class="err">시작위치</span><span class="p">,</span><span class="err">자를문자수</span><span class="p">)</span>
+
+<span class="k">SUBSTRING</span><span class="p">(</span><span class="s1">'123456-7891234'</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1">--결과: 6-7</span>
+</code></pre></div></div>
+
+<p>[출처] https://coding-factory.tistory.com</p>
+
+:ET
